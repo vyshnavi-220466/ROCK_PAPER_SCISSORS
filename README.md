@@ -48,3 +48,7 @@ This project was developed to strengthen JavaScript programming skills by implem
 3. The result is displayed instantly.
 4. Scores are updated based on the outcome.
 5. Continue playing to improve your score.
+
+##SCREENSHOTS
+###HOME page
+![home page](images/rock_paper_scissor.jpeg)
