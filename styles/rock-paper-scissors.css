@@ -1,0 +1,40 @@
+.body{
+    background-color: black;
+}
+.rock{
+    background-color: black;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    border: 3px solid white;
+    margin-right: 10px;
+}
+.para{
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: arial;
+}
+.para1{
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    font-family: arial;
+    margin-top: 55px;
+}
+.para2,.para3{
+    color: white;
+}
+.wins,.ties,.loses{
+    color: white;
+    font-size: 18px;
+    font-family: Arial;
+    font-weight: lighter;
+    margin-top: 45px;
+
+}
+.reset,.auto{
+    padding:8px 16px 8px 16px;
+    border: 1px solid;
+    font-size: 15px;
+}

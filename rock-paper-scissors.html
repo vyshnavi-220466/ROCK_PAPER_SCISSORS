@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/rock-paper-scissors.css">
+</head>
+<body class="body">
+    <p class="para">Rock Paper Scissors</p>
+    <button onclick=mymove('rock') class="rock"><img src="images/rock-emoji.png" width="50px"></button>
+    <button onclick=mymove('paper') class="rock"><img src="images/paper-emoji.png" width="50px"></button>
+    <button onclick=mymove('scissors') class="rock"><img src="images/scissors-emoji.png" width="50px"></button>
+    <p class="para1"></p>
+    <div style="display: flex; gap:20px">
+        <p class="para2"> </p>
+            <p class="para3"></p>
+</div>
+<div style="display: flex;gap:5px">
+    <p class="wins"></p>
+    <p class="loses"></p>
+    <p class="ties"></p>
+</div>
+<button onclick=reset("ResetScore") class="reset">ResetScore</button>
+<button onclick=autoplay('AutoPlay') class="auto">AutoPlay</button>
+        
+    <script>
+        function reset(reset){
+            if(reset==='ResetScore'){
+            obj.wins=0;
+            obj.loses=0;
+            obj.ties=0;
+            document.querySelector('.wins').innerHTML=`Wins:${obj.wins}`
+            document.querySelector('.loses').innerHTML=`Loses:${obj.loses}`
+            document.querySelector('.ties').innerHTML=`Ties:${obj.ties}`
+            }
+
+
+        }
+        
+        
+        function fun(){
+            let a1=Math.random();
+            let computermove='';
+            console.log(a1);
+            if(a1>=0 && a1<=1/3){
+            computermove='rock'
+            }
+            if(a1>1/3 && a1<=2/3){
+                computermove='paper'
+             }
+            if(a1>2/3){
+                 computermove='scissors'
+                }
+            return computermove;
+        }
+        fun();
+        let obj={
+            wins:0,
+            loses:0,
+            ties:0
+        }
+        document.querySelector('.wins').innerHTML=`Wins:${obj.wins},`
+        document.querySelector('.loses').innerHTML=`Loses:${obj.loses},`
+        document.querySelector('.ties').innerHTML=`Ties:${obj.ties}`
+    
+        function mymove(mymove){
+            let computermove1=fun();
+            console.log(` computer move is ${computermove1}`)
+            document.querySelector('.para2').innerHTML=` you ${mymove}`
+            console.log(`myy move is ${mymove}`)
+            document.querySelector('.para3').innerHTML=`${computermove1} computer`
+            if(mymove==='rock' && computermove1==='rock' ){
+                document.querySelector('.para1').innerHTML='tie'
+                console.log('tie')
+                obj.ties++;
+                document.querySelector('.ties').innerHTML=`ties: ${obj.ties}`
+
+            }
+            else if(mymove==='rock' && computermove1==='paper'){
+                document.querySelector('.para1').innerHTML='you lose'
+                console.log('you lose')
+                obj.loses++;
+                document.querySelector('.loses').innerHTML=`loses: ${obj.loses}`
+
+            }
+            else if(mymove==='rock' && computermove1==='scissors'){
+                document.querySelector('.para1').innerHTML='you win'
+                console.log('you win')
+                obj.wins++;
+                document.querySelector('.wins').innerHTML=`wins: ${obj.wins}`
+
+            }
+            else if(mymove==='paper' && computermove1==='rock'){
+                document.querySelector('.para1').innerHTML='you win'
+                console.log('you win')
+                obj.wins++;
+                document.querySelector('.wins').innerHTML=`wins: ${obj.wins}`
+
+            }
+            else if(mymove==='paper' && computermove1==='paper'){
+                document.querySelector('.para1').innerHTML='tie'
+                console.log('tie')
+                obj.ties++;
+                document.querySelector('.ties').innerHTML=`ties: ${obj.ties}`
+
+
+            }
+            else if(mymove==='paper' && computermove1==='scissors'){
+                document.querySelector('.para1').innerHTML='you lose'
+                console.log('you lose')
+                obj.loses++;
+                document.querySelector('.loses').innerHTML=`loses: ${obj.loses}`
+
+            }
+            else if(mymove==='scissors' && computermove1==='rock'){
+                document.querySelector('.para1').innerHTML='you lose'
+                console.log('you lose')
+                obj.loses++;
+                document.querySelector('.loses').innerHTML=`loses: ${obj.loses}`
+
+            }
+            else if(mymove==='scissors' && computermove1==='paper'){
+                document.querySelector('.para1').innerHTML='you win'
+                console.log('you win')
+                obj.wins++;
+                document.querySelector('.wins').innerHTML=`wins: ${obj.wins}`
+
+            }
+            else if(mymove==='scissors' && computermove1==='scissors'){
+                document.querySelector('.para1').innerHTML='tie'
+                console.log('tie')
+                obj.ties++;
+                document.querySelector('.ties').innerHTML=`ties: ${obj.ties}`
+
+            }
+
+        }
+    
+    </script>
+</body>
+</html>
